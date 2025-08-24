@@ -1,41 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Asset Locator</title>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Asset Locator — Recover Your Unclaimed Property</title>
+  <meta name="description" content="We identify, verify, and file to reclaim unclaimed property held by state treasuries and institutions. No upfront fees.">
+  <link rel="canonical" href="https://theassetlocator.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Asset Locator — Recover Your Unclaimed Property">
+  <meta property="og:description" content="We identify, verify, and file to reclaim unclaimed property held by state treasuries and institutions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://theassetlocator.com/">
+  <meta property="og:image" content="https://theassetlocator.com/assets/img/og-card.png">
+
+  <!-- Critical inline styles (header/hero for instant UX) -->
+  <style>
+    :root{
+      --bg:#0F1115;--text:#EDEDED;--muted:#C9C9C9;--gold:#C9A227;--gold-ink:#8B7720;
+      --emerald:#1EA672;--surface:#141821;--surface-2:#171B25;--focus:#5B9DD9;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}
+    a{color:var(--gold);text-decoration:none}
+    a:focus,button:focus{outline:3px solid var(--focus);outline-offset:2px}
+    /* Header */
+    .header{position:sticky;top:0;z-index:1000;background:
+      linear-gradient(180deg, rgba(15,17,21,.96) 0%, rgba(15,17,21,.92) 100%);
+      backdrop-filter:saturate(120%) blur(6px);border-bottom:1px solid #1e2330}
+    .wrap{max-width:1100px;margin:auto;padding:0 20px}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:40px;height:40px;border-radius:50%;border:2px solid var(--gold);object-fit:cover;background:#222}
+    .brand h1{font-size:1.05rem;margin:0;font-weight:700;letter-spacing:.2px}
+    .brand small{display:block;color:var(--muted);font-weight:500;margin-top:2px}
+    .links{display:flex;gap:20px;align-items:center}
+    .links a{color:var(--text);opacity:.9}
+    .links a:hover{opacity:1}
+    .burger{display:none;background:none;border:0;color:var(--text);font-size:1rem}
+    /* Hero */
+    .hero{padding:96px 20px 40px;background:
+      radial-gradient(1000px 500px at 85% -50%, #1EA67214, transparent 60%),
+      radial-gradient(900px 500px at -10% -60%, #C9A22718, transparent 60%)}
+    .hero .grid{display:grid;gap:24px;grid-template-columns:1fr}
+    .h1{font-size:2rem;line-height:1.2;margin:0 0 10px}
+    .sub{color:var(--muted);max-width:62ch;margin:0 0 24px}
+    .cta{display:inline-block;background:var(--gold);color:#0b0d12;font-weight:700;
+      padding:12px 18px;border-radius:8px;border:1px solid var(--gold-ink)}
+    .cta:hover{filter:brightness(.98)}
+    /* Sections */
+    section{padding:40px 20px;border-top:1px solid #1e2330;background:transparent}
+    .section-title{font-size:1.25rem;margin:0 0 16px}
+    .cards{display:grid;gap:16px}
+    .card{background:var(--surface);border:1px solid #202636;border-radius:10px;padding:16px}
+    .card h3{margin:0 0 8px;font-size:1rem}
+    /* FAQ via details/summary for a11y */
+    details{background:var(--surface);border:1px solid #202636;border-radius:10px;padding:12px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:600}
+    /* Footer */
+    footer{border-top:1px solid #1e2330;background:var(--surface-2);padding:28px 20px;color:var(--muted)}
+    .foot-grid{display:grid;gap:16px}
+    .foot-grid a{color:var(--text)}
+    /* Responsive */
+    @media (min-width:768px){
+      .hero .grid{grid-template-columns:1.2fr .8fr;align-items:center}
+      .h1{font-size:2.4rem}
+      .cards{grid-template-columns:repeat(3,1fr)}
+      .values{grid-template-columns:repeat(4,1fr)}
+      .foot-grid{grid-template-columns:2fr 1fr 1fr}
+    }
+    @media (max-width:768px){
+      .burger{display:inline-flex;align-items:center;gap:8px}
+      .links{position:fixed;inset:64px 0 auto 0;background:var(--surface-2);
+        border-bottom:1px solid #1e2330;padding:14px 20px;display:none;flex-direction:column;gap:12px}
+      .links.active{display:flex}
+    }
+    main{display:block}
+  </style>
+
+  <!-- Full stylesheet (will be sent as assets/css/styles.css) -->
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header>
-    <h1>The Asset Locator</h1>
-    <nav>
-      <a href="/">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="The Asset Locator home">
+        <img class="logo" src="assets/img/logo.png" alt="The Asset Locator logo">
+        <div>
+          <h1>The Asset Locator</h1>
+          <small>by King David Contracting LLC</small>
+        </div>
+      </a>
+
+      <nav aria-label="Primary">
+        <button class="burger" aria-controls="site-menu" aria-expanded="false" id="burgerBtn">
+          ☰ <span class="sr-only">Menu</span>
+        </button>
+        <div class="links" id="site-menu" role="menubar">
+          <a role="menuitem" href="/">Home</a>
+          <a role="menuitem" href="about.html">About</a>
+          <a role="menuitem" href="services.html">Services</a>
+          <a role="menuitem" href="intake.html">Intake</a>
+          <a role="menuitem" href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
   </header>
-  <main>
-    <section id="about">
-      <h2>About Us</h2>
-      <p>Helping clients recover unclaimed property and assets nationwide with integrity and efficiency.</p>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap grid">
+        <div>
+          <h2 id="hero-title" class="h1">Find and recover money that already belongs to you.</h2>
+          <p class="sub">
+            We identify, verify, and file to reclaim unclaimed property held by state treasuries and institutions.
+            No upfront fees. Transparent, compliant, and fast.
+          </p>
+          <a class="cta" href="intake.html">Start Your Claim</a>
+          <p style="margin-top:10px;color:#b8b8b8;font-size:.95rem">
+            You may file directly with your state’s unclaimed property office without using a paid service.
+          </p>
+        </div>
+        <div aria-hidden="true" style="justify-self:end;max-width:520px">
+          <img src="assets/img/hero-illustration.png" alt="" style="width:100%;height:auto;border-radius:12px;border:1px solid #202636;background:#121620">
+        </div>
+      </div>
     </section>
-    <section id="services">
-      <h2>Services</h2>
-      <ul>
-        <li>Unclaimed property recovery</li>
-        <li>Records research and documentation</li>
-        <li>Client support and filing assistance</li>
-      </ul>
+
+    <!-- How It Works -->
+    <section aria-labelledby="how-title">
+      <div class="wrap">
+        <h2 id="how-title" class="section-title">How it works</h2>
+        <div class="cards" style="grid-template-columns:repeat(5,1fr)">
+          <article class="card"><h3>1) Identification</h3><p>We scan official public records for potential matches.</p></article>
+          <article class="card"><h3>2) Verification</h3><p>We confirm ownership through documents and eligibility checks.</p></article>
+          <article class="card"><h3>3) Engagement</h3><p>We reach out respectfully with a clear, no-pressure offer.</p></article>
+          <article class="card"><h3>4) Filing</h3><p>We prepare a complete, compliant claim package for the agency.</p></article>
+          <article class="card"><h3>5) Recovery</h3><p>Funds are released to you; our fee is contingent on success.</p></article>
+        </div>
+      </div>
     </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: info@theassetlocator.com</p>
+
+    <!-- Value Props -->
+    <section aria-labelledby="values-title">
+      <div class="wrap">
+        <h2 id="values-title" class="section-title">Why choose us</h2>
+        <div class="cards values">
+          <article class="card"><h3>Access</h3><p>We simplify complex processes and paperwork.</p></article>
+          <article class="card"><h3>Speed</h3><p>Familiarity with agency requirements reduces delays.</p></article>
+          <article class="card"><h3>Compliance</h3><p>We follow state and federal rules and disclosures.</p></article>
+          <article class="card"><h3>Trust</h3><p>No upfront fees — we’re paid only if you recover funds.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof (placeholders) -->
+    <section aria-labelledby="proof-title">
+      <div class="wrap">
+        <h2 id="proof-title" class="section-title">Trusted process</h2>
+        <div class="cards" style="grid-template-columns:repeat(3,1fr)">
+          <article class="card"><h3>SAM.gov Registered</h3><p>Active entity; transparent operations and compliance.</p></article>
+          <article class="card"><h3>Public-Record Driven</h3><p>We rely on official state and court records.</p></article>
+          <article class="card"><h3>Clear Disclosures</h3><p>DIY option stated on every relevant page.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-title">
+      <div class="wrap">
+        <h2 id="faq-title" class="section-title">Frequently asked questions</h2>
+
+        <details>
+          <summary>What is unclaimed property?</summary>
+          <p>Dormant funds held by states or institutions — e.g., old bank accounts, insurance payouts, deposits, or overpayments.</p>
+        </details>
+
+        <details>
+          <summary>What do you charge?</summary>
+          <p>A contingent fee disclosed up front. If you don’t recover funds, you don’t pay a fee.</p>
+        </details>
+
+        <details>
+          <summary>How long does it take?</summary>
+          <p>Varies by agency and documentation; many claims resolve in weeks to a few months.</p>
+        </details>
+
+        <details>
+          <summary>Can I file myself?</summary>
+          <p>Yes. You may file directly with your state’s unclaimed property office without using a paid service.</p>
+        </details>
+
+        <details>
+          <summary>What documents might be required?</summary>
+          <p>Typically government ID, address verification, and proof of relationship to the owner or entity.</p>
+        </details>
+
+        <details>
+          <summary>How do you handle my data?</summary>
+          <p>We collect only what’s needed to evaluate and process your claim. See our <a href="privacy.html">Privacy Policy</a>.</p>
+        </details>
+      </div>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2025 The Asset Locator. All rights reserved.</p>
+
+  <!-- Footer / Contact -->
+  <footer id="contact" role="contentinfo">
+    <div class="wrap foot-grid">
+      <div>
+        <strong>The Asset Locator</strong><br>
+        An offering of King David Contracting LLC<br>
+        PO Box 44, Vineland, NJ 08362<br>
+        <a href="tel:+18564622627">+1 (856) 462-2627</a> ·
+        <a href="mailto:info@theassetlocator.com">info@theassetlocator.com</a>
+      </div>
+      <div>
+        <strong>Legal</strong><br>
+        <a href="privacy.html">Privacy</a><br>
+        <a href="terms.html">Terms</a>
+      </div>
+      <div>
+        <strong>Resources</strong><br>
+        <a href="https://sam.gov" target="_blank" rel="noopener">SAM.gov</a><br>
+        <a href="https://unclaimed.org" target="_blank" rel="noopener">State Unclaimed Property</a>
+      </div>
+    </div>
+    <div class="wrap" style="margin-top:10px;color:#9da4b3">
+      © <span id="year"></span> The Asset Locator. All rights reserved.
+    </div>
   </footer>
+
+  <!-- Minimal JS: burger toggle + year -->
+  <script>
+    (function(){
+      var btn=document.getElementById('burgerBtn');
+      var menu=document.getElementById('site-menu');
+      if(btn && menu){
+        btn.addEventListener('click', function(){
+          var open = menu.classList.toggle('active');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+      var y=document.getElementById('year'); if(y){ y.textContent=new Date().getFullYear(); }
+    }());
+  </script>
+
+  <!-- Full script (will be sent as assets/js/main.js) -->
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
