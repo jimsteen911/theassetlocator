@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start Your Claim — The Asset Locator</title>
+<meta name="description" content="Start your unclaimed property claim. No upfront fees. Clear disclosures and secure handling of your information.">
+<link rel="canonical" href="https://theassetlocator.com/intake.html">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head><body>
+<header class="header"><div class="wrap nav">
+  <a class="brand" href="/"><img class="logo" src="assets/img/logo.png" alt="Logo"><div><h1>The Asset Locator</h1><small>by King David Contracting LLC</small></div></a>
+  <nav aria-label="Primary"><button class="burger" aria-controls="site-menu" aria-expanded="false" id="burgerBtn">☰</button>
+    <div class="links" id="site-menu" role="menubar">
+      <a role="menuitem" href="/">Home</a><a role="menuitem" href="about.html">About</a><a role="menuitem" href="services.html">Services</a><a role="menuitem" href="intake.html" aria-current="page">Intake</a><a role="menuitem" href="#contact">Contact</a>
+    </div>
+  </nav></div></header>
+
+<main>
+<section class="hero" aria-labelledby="title"><div class="wrap">
+  <h2 id="title" class="h1">Start your claim</h2>
+  <p class="sub">Complete this short form so we can evaluate your eligibility and contact you promptly.</p>
+</div></section>
+
+<section class="section" aria-labelledby="form-title"><div class="wrap">
+  <h2 id="form-title" class="section-title">Claim Intake</h2>
+
+  <!-- success message via ?thanks=1 -->
+  <div id="thanks" class="card" style="display:none" role="status" aria-live="polite">
+    <strong>Thank you!</strong> We’ll review your information and reach out within 1–2 business days.
+  </div>
+
+  <form id="intakeForm" class="card" method="POST" action="https://formsubmit.co/info@theassetlocator.com" novalidate>
+    <!-- Honeypot -->
+    <input type="text" name="_honey" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;">
+    <input type="hidden" name="_subject" value="New Asset Locator Intake">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="source_page" value="/intake.html">
+
+    <div class="grid-2">
+      <div class="fg"><label for="first">First Name*</label><input id="first" name="first_name" required></div>
+      <div class="fg"><label for="last">Last Name*</label><input id="last" name="last_name" required></div>
+      <div class="fg"><label for="email">Email*</label><input id="email" name="email" type="email" required></div>
+      <div class="fg"><label for="phone">Phone*</label><input id="phone" name="phone" type="tel" required></div>
+      <div class="fg span-2"><label for="street">Mailing Address*</label><input id="street" name="address_street" required placeholder="Street"></div>
+      <div class="fg"><label for="city">City*</label><input id="city" name="address_city" required></div>
+      <div class="fg"><label for="state">State*</label><input id="state" name="address_state" required maxlength="2" placeholder="NJ"></div>
+      <div class="fg"><label for="zip">ZIP*</label><input id="zip" name="address_zip" required pattern="[0-9]{5}(-[0-9]{4})?"></div>
+      <div class="fg"><label for="entity">Entity Type*</label>
+        <select id="entity" name="entity_type" required>
+          <option value="">Select…</option>
+          <option>Individual</option><option>Business</option><option>Nonprofit</option><option>Estate/Heir</option>
+        </select>
+      </div>
+      <div class="fg"><label for="statefunds">State holding funds*</label>
+        <input id="statefunds" name="holding_state" required placeholder="e.g., NJ">
+      </div>
+      <div class="fg"><label for="ref">Reference / Claim # (optional)</label><input id="ref" name="reference_no" placeholder="If known"></div>
+      <div class="fg"><label for="rel">Relationship to owner*</label>
+        <select id="rel" name="relationship" required>
+          <option value="">Select…</option>
+          <option>Self</option><option>Heir</option><option>Authorized Representative</option>
+        </select>
+      </div>
+      <fieldset class="fg span-2"><legend>Document checklist (no uploads now)</legend>
+        <label><input type="checkbox" name="docs_id"> Govt ID</label>
+        <label><input type="checkbox" name="docs_addr"> Proof of Address</label>
+        <label><input type="checkbox" name="docs_last4"> SSN/EIN last 4</label>
+      </fieldset>
+      <div class="fg span-2"><label for="notes">Notes</label><textarea id="notes" name="notes" rows="4" placeholder="Anything else we should know?"></textarea></div>
+    </div>
+
+    <hr class="sep">
+    <div class="fg span-2">
+      <label for="sig">Digital Signature (type full name)*</label>
+      <input id="sig" name="signature_name" required>
+    </div>
+    <div class="fg"><label for="sigdate">Date*</label><input id="sigdate" name="signature_date" required></div>
+
+    <div class="fg span-2">
+      <label><input type="checkbox" name="consent_diy" required> I understand I may file a claim directly with my state’s unclaimed property office without using a paid service.</label>
+      <label><input type="checkbox" name="consent_contact" required> I consent to be contacted about my claim by phone, email, or mail.</label>
+      <label><input type="checkbox" name="consent_truthful" required> I certify the information provided is accurate to the best of my knowledge.</label>
+    </div>
+
+    <div class="actions"><button class="cta" type="submit">Submit</button></div>
+  </form>
+  <p style="margin-top:10px;color:#b8b8b8">We collect only what’s needed to evaluate and process your claim. See our <a href="privacy.html">Privacy Policy</a>.</p>
+</div></section>
+</main>
+
+<footer id="contact" role="contentinfo"><div class="wrap foot-grid">
+  <div><strong>The Asset Locator</strong><br>An offering of King David Contracting LLC<br>PO Box 44, Vineland, NJ 08362<br>
+    <a href="tel:+18564622627">+1 (856) 462-2627</a> · <a href="mailto:info@theassetlocator.com">info@theassetlocator.com</a></div>
+  <div><strong>Legal</strong><br><a href="privacy.html">Privacy</a><br><a href="terms.html">Terms</a></div>
+  <div><strong>Resources</strong><br><a href="https://sam.gov" target="_blank" rel="noopener">SAM.gov</a><br><a href="https://unclaimed.org" target="_blank" rel="noopener">State Unclaimed Property</a></div>
+</div><div class="wrap" style="margin-top:10px;color:#9da4b3">© <span id="year"></span> The Asset Locator. All rights reserved.</div></footer>
+<script src="assets/js/main.js" defer></script>
+</body></html>
