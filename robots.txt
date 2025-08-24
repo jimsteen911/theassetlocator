@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://theassetlocator.com/sitemap.xml
